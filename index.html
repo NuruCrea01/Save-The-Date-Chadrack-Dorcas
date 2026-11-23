@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<!--
+╔══════════════════════════════════════════════════════════════╗
+║  BLOC DE CONFIGURATION (CFG) — MODIFIEZ UNIQUEMENT ICI        ║
+║  Changez ce qui est entre guillemets "…". Ne touchez ni aux   ║
+║  guillemets, ni aux virgules, ni aux deux-points.             ║
+╚══════════════════════════════════════════════════════════════╝
+-->
+<script>
+const CFG = {
+  /* ---- Les mariés ---- */
+  maries: { prenom1: "Chadrack", prenom2: "Dorcas", initiales: "C & D" },
+
+  /* ---- Date (format AAAA-MM-JJTHH:MM:SS+01:00, heure de Kinshasa) ---- */
+  date: {
+    iso: "2026-12-26T15:00:00+01:00",
+    affichage: "26 Décembre 2026",
+    heure: "15h00"            // laissez "" pour ne pas afficher l'heure
+  },
+
+  /* ---- Couleurs du site ---- */
+  couleurs: { olive: "#3b4228", rouille: "#794224", sauge: "#cfd8c8", charbon: "#222222" },
+
+  /* ---- Photos : "fichier" = chemin de l'image, "cadrage" = partie visible
+          "50% 20%" = centré à l'horizontale, 20 % depuis le haut.
+          Horizontal : 0% = gauche, 50% = centre, 100% = droite.
+          Vertical   : 0% = haut,   50% = centre, 100% = bas.          ---- */
+  photos: {
+    accueil: { fichier: "photos/accueil.jpg",   cadrage: "50% 18%", alt: "Chadrack et Dorcas" },
+    galerie: [
+      { fichier: "photos/galerie-1.jpg", cadrage: "50% 20%", alt: "Chadrack et Dorcas" },
+      { fichier: "photos/galerie-2.jpg", cadrage: "50% 20%", alt: "Chadrack et Dorcas" },
+      { fichier: "photos/galerie-3.jpg", cadrage: "50% 25%", alt: "Chadrack et Dorcas" },
+      { fichier: "photos/galerie-4.jpg", cadrage: "50% 30%", alt: "Chadrack et Dorcas" }
+    ]
+  },
+
+  /* ---- Tenue : 4 pastilles de couleur + 2 pastilles d'image de pagne ---- */
+  tenue: {
+    couleurs: [
+      { nom: "Vert olive foncé",        couleur: "#3b4228" },
+      { nom: "Brun terracotta brûlé",   couleur: "#794224" },
+      { nom: "Rouille",                 couleur: "#9a4a2b" },
+      { nom: "Taupe chaud / beige grisé", couleur: "#a89a8a" }
+    ],
+    pagnes: [
+      { fichier: "photos/pagne-1.jpg", cadrage: "50% 50%", alt: "Pagne 1" },
+      { fichier: "photos/pagne-2.jpg", cadrage: "50% 50%", alt: "Pagne 2" }
+    ]
+  },
+
+  /* ---- Liens ---- */
+  liens: {
+    formulaire: "https://forms.gle/F6eS6H8nLx6bEr9DA",
+    whatsappNumero: "243976171289",
+    whatsappMessage: "Bonjour, je confirme ma présence au mariage coutumier de Chadrack & Dorcas le 26 décembre 2026."
+  },
+
+  /* ---- Textes ---- */
+  textes: {
+    titreOnglet: "Chadrack & Dorcas · Save the date",
+    boutonEnveloppe: "Ouvrir l'enveloppe",
+    intertitre: "Save the date",
+    ceremonie: "Mariage coutumier",
+    phraseAccueil: "Avec joie, nous vous annonçons la date de la célébration de notre mariage coutumier, pour partager avec nous un moment de tradition et de bonheur.",
+    compteur: ["Jours", "Heures", "Minutes", "Secondes"],
+    tenueTitre: "Wax (pagne)",
+    tenueTexte: "Pour notre mariage coutumier, nous vous invitons à porter le pagne aux couleurs ci-dessous",
+    rsvpTitre: "Confirmer ma présence",
+    rsvpLimiteLabel: "Date limite de réponse",
+    rsvpLimite: "5 décembre 2026",
+    rsvpBouton: "Répondre à l'invitation",
+    rsvpFenetreTitre: "Répondre à l'invitation",
+    choixFormulaire: "Remplir le formulaire",
+    choixWhatsapp: "Écrire sur WhatsApp",
+    fermer: "Fermer",
+    piedMessage: "Merci de faire partie de ceux qui nous sont chères, nous vous prions de confirmer votre présence avant la date du 05 décembre 2026",
+    hashtag: "#ChadrackEtDorcas2026"
+  }
+};
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chadrack &amp; Dorcas · Save the date</title>
+<meta name="description" content="Save the date : mariage coutumier de Chadrack &amp; Dorcas, le 26 décembre 2026 à 15h00.">
+<meta name="theme-color" content="#3b4228">
+<!-- Aperçu WhatsApp : remplacez l'adresse ci-dessous par l'adresse finale de votre site (voir LISEZ-MOI.txt) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chadrack &amp; Dorcas · Save the date">
+<meta property="og:description" content="Mariage coutumier · 26 décembre 2026 · 15h00">
+<meta property="og:image" content="https://VOTRE-NOM.github.io/VOTRE-DEPOT/photos/apercu.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Cinzel:wght@400;500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{--olive:#3b4228;--rouille:#794224;--sauge:#cfd8c8;--charbon:#222222;
+--script:"Pinyon Script",cursive;--titre:"Bodoni Moda",Georgia,serif;--inter:"Cinzel",Georgia,serif;--texte:"Jost",system-ui,sans-serif;
+--ease:cubic-bezier(.22,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--texte);font-weight:300;color:var(--charbon);background:var(--olive);line-height:1.6}
+body.lock{overflow:hidden;height:100%}
+img{display:block;max-width:100%}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1.3s ease,transform 1.3s var(--ease);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+.mots .m{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.12em .06em .25em;margin:-.12em -.06em -.25em}
+.mots .m>span{display:inline-block;transform:translateY(120%);transition:transform 1.2s var(--ease);transition-delay:var(--w)}
+.mots.in .m>span{transform:none}
+.inter{font-family:var(--inter);font-weight:400;text-transform:uppercase;letter-spacing:.38em;font-size:.82rem;margin:0}
+
+/* ---------- Enveloppe ---------- */
+#intro{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3.2rem;
+background:radial-gradient(circle at 50% 38%,#4a5232 0%,#2b311e 100%);transition:opacity 1.5s ease}
+#intro.fin{opacity:0;pointer-events:none}
+.stage{--w:min(86vw,430px);position:relative;width:var(--w);height:calc(var(--w)*.68);perspective:1300px;margin-top:12vh}
+.stage>*{position:absolute}
+.e-back{inset:0;background:#2f3620;border-radius:3px;box-shadow:0 30px 60px rgba(0,0,0,.45);z-index:1}
+.card{left:5%;width:90%;top:6%;height:88%;z-index:2;background:#f1f0e6;border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--olive);
+box-shadow:0 4px 18px rgba(0,0,0,.28);transition:transform 1.3s cubic-bezier(.45,.05,.2,1)}
+.card::before{content:"";position:absolute;inset:.45rem;border:1px solid rgba(121,66,36,.45);pointer-events:none}
+.card .c-noms{font-family:var(--script);font-size:calc(var(--w)*.115);line-height:1.1;margin:0}
+.card .c-inter{font-family:var(--inter);text-transform:uppercase;letter-spacing:.32em;font-size:calc(var(--w)*.032);color:var(--rouille);margin:.9em 0 .5em}
+.card .c-date{font-family:var(--titre);font-size:calc(var(--w)*.05);margin:0}
+.e-front{inset:0;z-index:3;filter:drop-shadow(0 -2px 3px rgba(0,0,0,.35))}
+.e-front i{position:absolute;inset:0;background:linear-gradient(165deg,#4d5635,#3b4228);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.flap{left:0;top:0;width:100%;height:56%;z-index:4;transform-origin:50% 0;transition:transform 1s cubic-bezier(.5,0,.2,1);filter:drop-shadow(0 4px 5px rgba(0,0,0,.35))}
+.flap i{position:absolute;inset:0;background:linear-gradient(180deg,#566040,#454d2f);clip-path:polygon(0 0,100% 0,50% 100%)}
+.seal{left:50%;top:56%;width:calc(var(--w)*.21);aspect-ratio:1;transform:translate(-50%,-50%);z-index:5;display:grid;place-items:center;
+border-radius:48% 52% 50% 50%/52% 48% 52% 48%;background:radial-gradient(circle at 35% 30%,#a65a33,#794224 55%,#5a2f18);
+box-shadow:0 3px 8px rgba(0,0,0,.5),inset 0 0 0 3px rgba(255,255,255,.08);color:#ecd6bd;font-family:var(--titre);font-weight:500;font-size:calc(var(--w)*.056);transition:opacity .5s ease}
+.stage.open .flap{transform:rotateX(180deg)}
+.stage.open .seal{opacity:0}
+.stage.behind .flap{z-index:1}
+.stage.rise .card{transform:translateY(-58%)}
+.stage.sortie .e-back,.stage.sortie .e-front,.stage.sortie .flap{transform:translateY(55vh) rotateX(var(--rx,0deg));opacity:0;transition:transform 1.2s ease,opacity 1s ease}
+.stage.sortie .flap{--rx:180deg}
+.stage.sortie .card{transform:translateY(0) scale(1.12);transition-delay:.6s}
+.stage.devant .card{z-index:6}
+.btn{font-family:var(--inter);text-transform:uppercase;letter-spacing:.24em;font-size:.82rem;padding:1rem 1.9rem;background:transparent;color:var(--sauge);border:1px solid var(--sauge);cursor:pointer;
+transition:background .5s,color .5s,opacity .8s;-webkit-tap-highlight-color:transparent;text-decoration:none;display:inline-block;text-align:center}
+.btn:hover,.btn:focus-visible{background:var(--sauge);color:var(--olive);outline:none}
+#intro.go .btn{opacity:0;pointer-events:none}
+
+/* ---------- Accueil ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:var(--olive)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(34,34,34,.22) 0%,rgba(34,34,34,0) 22%,rgba(43,49,30,.78) 58%,rgba(43,49,30,.97) 100%)}
+.hero-c{position:relative;z-index:2;width:100%;max-width:780px;padding:12rem 1.25rem calc(2.4rem + env(safe-area-inset-bottom))}
+.hero h1{font-family:var(--script);font-weight:400;font-size:clamp(3.4rem,14vw,8rem);line-height:1.1;margin:0 0 .4rem}
+.hero .inter{color:var(--sauge);margin-top:.4rem}
+.hero .c-type{font-family:var(--inter);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(207,216,200,.8);margin:.7rem 0 0}
+.hero .date{font-family:var(--titre);font-size:clamp(1.25rem,4.6vw,1.8rem);margin:.9rem 0 1.3rem}
+.hero .phrase{max-width:34rem;margin:0 auto 1.8rem;font-size:1.02rem;line-height:1.75}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;max-width:30rem;margin:0 auto}
+.cd div{border:1px solid rgba(207,216,200,.4);padding:.75rem .2rem .6rem;background:rgba(43,49,30,.35)}
+.cd b{display:block;font-family:var(--titre);font-weight:400;font-size:clamp(1.6rem,7vw,2.3rem);line-height:1.1;font-variant-numeric:tabular-nums}
+.cd span{font-family:var(--inter);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sauge)}
+
+/* ---------- Sections ---------- */
+.sec{padding:5rem 1.25rem;text-align:center}
+.sauge{background:var(--sauge);color:var(--charbon)}
+.olive{background:var(--olive);color:var(--sauge)}
+.sec h2{font-family:var(--titre);font-weight:500;font-size:clamp(2rem,7vw,3.2rem);line-height:1.15;margin:0 0 1.2rem}
+.sauge h2{color:var(--olive)}
+.sec .txt{max-width:34rem;margin:0 auto;font-size:1.05rem;line-height:1.75}
+
+/* Galerie */
+.gal{max-width:960px;margin:0 auto}
+.ph{position:relative;overflow:hidden;aspect-ratio:4/5;width:min(100%,460px);margin:0 auto 2.6rem;background:#b9c4b1;box-shadow:0 18px 40px rgba(34,34,34,.22)}
+.ph:last-child{margin-bottom:0}
+.ph img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform}
+@media(min-width:900px){.ph:nth-child(odd){margin-left:6%}.ph:nth-child(even){margin-right:6%;margin-left:auto}.ph{margin-bottom:-2rem}.ph:last-child{margin-bottom:0}}
+
+/* Tenue */
+.sw{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem 1rem;max-width:42rem;margin:2.8rem auto 0}
+@media(min-width:700px){.sw{grid-template-columns:repeat(6,1fr)}}
+.sw figure{margin:0}
+.dot{width:100%;max-width:92px;aspect-ratio:1;border-radius:50%;margin:0 auto;border:2px solid rgba(207,216,200,.7);overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.dot img{width:100%;height:100%;object-fit:cover}
+.sw figcaption{margin-top:.7rem;font-size:.82rem;line-height:1.35;color:var(--sauge)}
+
+/* Confirmer */
+.lim{margin:2rem 0 2.2rem}
+.lim .inter{color:var(--rouille);margin-bottom:.4rem}
+.lim p:last-child{font-family:var(--titre);font-size:clamp(1.4rem,5vw,2rem);color:var(--olive);margin:0}
+.btn.plein{background:var(--rouille);border-color:var(--rouille);color:#fff}
+.btn.plein:hover,.btn.plein:focus-visible{background:var(--olive);border-color:var(--olive);color:#fff}
+
+/* Pied de page */
+footer{background:var(--charbon);color:var(--sauge);text-align:center;padding:4rem 1.5rem calc(3rem + env(safe-area-inset-bottom))}
+footer p{max-width:32rem;margin:0 auto;line-height:1.8}
+.ini{font-family:var(--titre);font-size:2.4rem;color:#fff;margin:2rem 0 .4rem!important}
+.hash{font-family:var(--inter);letter-spacing:.2em;font-size:.85rem;color:var(--sauge)}
+
+/* Fenêtre */
+#modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:1.25rem;background:rgba(34,34,34,.72);opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
+#modal.on{opacity:1;visibility:visible}
+.box{position:relative;width:100%;max-width:400px;background:var(--sauge);padding:2.6rem 1.6rem 1.8rem;text-align:center;transform:translateY(16px);transition:transform .7s var(--ease)}
+#modal.on .box{transform:none}
+.box h3{font-family:var(--titre);font-weight:500;font-size:1.5rem;color:var(--olive);margin:0 0 1.4rem}
+.box .btn{display:block;width:100%;margin-top:.8rem;color:var(--olive);border-color:var(--olive)}
+.box .btn:hover,.box .btn:focus-visible{background:var(--olive);color:var(--sauge)}
+.x{position:absolute;top:.4rem;right:.6rem;background:none;border:0;font-size:2rem;line-height:1;color:var(--olive);cursor:pointer;padding:.4rem .7rem}
+
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.reveal{opacity:1;transform:none}.mots .m>span{transform:none}
+}
+</style>
+</head>
+<body class="lock">
+
+<div id="intro">
+  <div class="stage" id="stage">
+    <div class="e-back"></div>
+    <div class="card"><p class="c-noms" id="c-noms"></p><p class="c-inter" id="c-inter"></p><p class="c-date" id="c-date"></p></div>
+    <div class="e-front"><i></i></div>
+    <div class="flap"><i></i></div>
+    <div class="seal" id="seal"></div>
+  </div>
+  <button class="btn" id="ouvrir" type="button"></button>
+</div>
+
+<main id="site">
+  <header class="hero" id="accueil">
+    <img id="h-img" alt="" fetchpriority="high">
+    <div class="hero-c">
+      <h1 id="h-noms"></h1>
+      <p class="inter reveal" id="h-inter" style="--d:.5s"></p>
+      <p class="c-type reveal" id="h-type" style="--d:.6s"></p>
+      <p class="date reveal" id="h-date" style="--d:.7s"></p>
+      <p class="phrase reveal" id="h-phrase" style="--d:.9s"></p>
+      <div class="cd reveal" id="cd" style="--d:1.1s" aria-live="off"></div>
+    </div>
+  </header>
+
+  <section class="sec sauge" id="galerie"><div class="gal" id="gal"></div></section>
+
+  <section class="sec olive" id="tenue">
+    <h2 id="t-titre"></h2>
+    <p class="txt reveal" id="t-texte"></p>
+    <div class="sw reveal" id="sw"></div>
+  </section>
+
+  <section class="sec sauge" id="rsvp">
+    <h2 id="r-titre"></h2>
+    <div class="lim reveal"><p class="inter" id="r-label"></p><p id="r-date"></p></div>
+    <button class="btn plein reveal" id="r-btn" type="button"></button>
+  </section>
+
+  <footer>
+    <p class="reveal" id="f-msg"></p>
+    <p class="ini reveal" id="f-ini"></p>
+    <p class="hash reveal" id="f-hash"></p>
+  </footer>
+</main>
+
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="m-titre">
+  <div class="box">
+    <button class="x" id="m-x" type="button">&times;</button>
+    <h3 id="m-titre"></h3>
+    <a class="btn" id="m-form" target="_blank" rel="noopener"></a>
+    <a class="btn" id="m-wa" target="_blank" rel="noopener"></a>
+  </div>
+</div>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},T=CFG.textes,M=CFG.maries,D=CFG.date;
+var reduit=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var root=document.documentElement.style;
+for(var c in CFG.couleurs)root.setProperty("--"+c,CFG.couleurs[c]);
+document.title=T.titreOnglet;
+var noms=M.prenom1+" & "+M.prenom2;
+
+function mots(el,txt,debut){
+  el.classList.add("mots");
+  el.innerHTML=txt.split(" ").map(function(w,i){return '<span class="m"><span style="--w:'+(((debut||0)+i*.13).toFixed(2))+'s">'+w+'</span></span>'}).join(" ");
+}
+function img(el,p){el.src=p.fichier;el.alt=p.alt||"";el.style.objectPosition=p.cadrage||"50% 50%"}
+
+/* Enveloppe */
+$("#seal").textContent=M.initiales;
+$("#c-noms").textContent=noms;$("#c-inter").textContent=T.intertitre;$("#c-date").textContent=D.affichage;
+$("#ouvrir").textContent=T.boutonEnveloppe;
+
+/* Accueil */
+img($("#h-img"),CFG.photos.accueil);$("#h-img").alt=noms;
+mots($("#h-noms"),noms,.2);
+$("#h-inter").textContent=T.intertitre;
+$("#h-type").textContent=T.ceremonie;
+$("#h-date").textContent=D.affichage+(D.heure?" · "+D.heure:"");
+$("#h-phrase").textContent=T.phraseAccueil;
+$("#cd").innerHTML=T.compteur.map(function(l,i){return '<div><b id="cd'+i+'">00</b><span>'+l+'</span></div>'}).join("");
+var cible=new Date(D.iso).getTime();
+function tick(){
+  var d=Math.max(0,cible-Date.now());
+  var v=[Math.floor(d/864e5),Math.floor(d%864e5/36e5),Math.floor(d%36e5/6e4),Math.floor(d%6e4/1e3)];
+  v.forEach(function(n,i){var e=$("#cd"+i);if(e)e.textContent=(n<10?"0":"")+n});
+}
+tick();setInterval(tick,1000);
+
+/* Galerie */
+$("#gal").innerHTML=CFG.photos.galerie.map(function(){return '<figure class="ph reveal"><img loading="lazy" decoding="async"></figure>'}).join("");
+var gi=document.querySelectorAll(".ph img");
+CFG.photos.galerie.forEach(function(p,i){img(gi[i],p)});
+
+/* Tenue */
+mots($("#t-titre"),T.tenueTitre);
+$("#t-texte").textContent=T.tenueTexte;
+var sw=CFG.tenue.couleurs.map(function(c){return '<figure><div class="dot" style="background:'+c.couleur+'"></div><figcaption>'+c.nom+'</figcaption></figure>'}).join("");
+sw+=CFG.tenue.pagnes.map(function(){return '<figure><div class="dot"><img loading="lazy" decoding="async"></div></figure>'}).join("");
+$("#sw").innerHTML=sw;
+var pi=document.querySelectorAll(".dot img");
+CFG.tenue.pagnes.forEach(function(p,i){img(pi[i],p)});
+
+/* Confirmer + pied de page */
+mots($("#r-titre"),T.rsvpTitre);
+$("#r-label").textContent=T.rsvpLimiteLabel;$("#r-date").textContent=T.rsvpLimite;$("#r-btn").textContent=T.rsvpBouton;
+$("#f-msg").textContent=T.piedMessage;$("#f-ini").textContent=M.initiales;$("#f-hash").textContent=T.hashtag;
+
+/* Fenêtre de réponse */
+var modal=$("#modal");
+$("#m-titre").textContent=T.rsvpFenetreTitre;
+$("#m-form").textContent=T.choixFormulaire;$("#m-form").href=CFG.liens.formulaire;
+$("#m-wa").textContent=T.choixWhatsapp;
+$("#m-wa").href="https://wa.me/"+CFG.liens.whatsappNumero+"?text="+encodeURIComponent(CFG.liens.whatsappMessage);
+$("#m-x").setAttribute("aria-label",T.fermer);
+function ouvrirM(){modal.classList.add("on");document.body.classList.add("lock");$("#m-x").focus()}
+function fermerM(){modal.classList.remove("on");document.body.classList.remove("lock");$("#r-btn").focus()}
+$("#r-btn").addEventListener("click",ouvrirM);
+$("#m-x").addEventListener("click",fermerM);
+modal.addEventListener("click",function(e){if(e.target===modal)fermerM()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal.classList.contains("on"))fermerM()});
+
+/* Apparition au défilement */
+function reveler(){
+  var els=document.querySelectorAll(".reveal,.mots");
+  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15,rootMargin:"0px 0px -5% 0px"});
+  els.forEach(function(e){io.observe(e)});
+}
+
+/* Profondeur de la galerie */
+if(!reduit){
+  var occ=false;
+  var par=function(){
+    occ=false;var vh=window.innerHeight;
+    gi.forEach(function(im){
+      var r=im.parentNode.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh)return;
+      var o=((r.top+r.height/2)-vh/2)/(vh/2+r.height/2);
+      im.style.transform="translate3d(0,"+(-o*r.height*.09).toFixed(1)+"px,0)";
+    });
+  };
+  var dem=function(){if(!occ){occ=true;requestAnimationFrame(par)}};
+  addEventListener("scroll",dem,{passive:true});addEventListener("resize",dem);par();
+}
+
+/* Séquence d'ouverture */
+var st=$("#stage"),intro=$("#intro"),k=reduit?.05:1,fait=false;
+function plus(cl,ms){setTimeout(function(){st.classList.add(cl)},ms*k)}
+$("#ouvrir").addEventListener("click",function(){
+  if(fait)return;fait=true;
+  intro.classList.add("go");
+  st.classList.add("open");
+  plus("behind",650);plus("rise",850);plus("sortie",2400);plus("devant",2950);
+  setTimeout(function(){
+    intro.classList.add("fin");
+    document.body.classList.remove("lock");
+    reveler();
+    setTimeout(function(){intro.style.display="none"},1600*k);
+  },4700*k);
+});
+})();
+</script>
+</body>
+</html>

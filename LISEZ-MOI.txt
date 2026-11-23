@@ -1,0 +1,34 @@
+SAVE THE DATE - CHADRACK & DORCAS
+=================================
+
+CONTENU DU DOSSIER
+- index.html : le site (une seule page)
+- photos/    : accueil.jpg, galerie-1 à 4.jpg, pagne-1.jpg, pagne-2.jpg, apercu.jpg
+
+COMMENT MODIFIER LE SITE
+Ouvrez index.html avec un éditeur de texte (Bloc-notes, TextEdit, ou mieux Notepad++ / VS Code).
+Tout en haut se trouve le bloc "CFG". Modifiez uniquement ce qui est entre guillemets.
+Ne supprimez ni les guillemets, ni les virgules.
+
+1) CHANGER UN TEXTE : cherchez-le dans CFG > textes et remplacez-le.
+2) CHANGER LA DATE : CFG > date. "iso" sert au compte à rebours (format 2026-12-26T15:00:00+01:00),
+   "affichage" est le texte montré. Laissez "heure" vide ("") pour ne pas l'afficher.
+3) CHANGER LES COULEURS : CFG > couleurs, et CFG > tenue > couleurs pour les pastilles.
+4) CHANGER UNE PHOTO : remplacez le fichier dans le dossier "photos" en gardant le même nom
+   (en .jpg), ou changez "fichier" dans CFG pour un autre nom.
+5) CHOISIR LA PARTIE VISIBLE D'UNE PHOTO : modifiez "cadrage", par exemple "50% 20%".
+   - 1er nombre : horizontal (0% = gauche, 50% = centre, 100% = droite)
+   - 2e nombre  : vertical (0% = haut, 50% = centre, 100% = bas)
+   Pour montrer plus le haut de la photo (visages), diminuez le 2e nombre.
+6) CHANGER LES LIENS : CFG > liens (formulaire, numéro WhatsApp, message WhatsApp).
+   Le numéro s'écrit sans + ni espaces (ex. 243976171289).
+
+APERÇU WHATSAPP (image affichée quand le lien est partagé)
+Image : photos/apercu.jpg (1200 x 630 px).
+Dans index.html, repérez la ligne qui contient og:image (juste après le bloc CFG)
+et remplacez https://VOTRE-NOM.github.io/VOTRE-DEPOT/photos/apercu.jpg par l'adresse
+réelle de votre site, suivie de /photos/apercu.jpg.
+WhatsApp garde parfois l'ancien aperçu en mémoire : si besoin, ajoutez ?v=2 à la fin du lien partagé.
+
+MISE EN LIGNE : voir les étapes GitHub Pages données dans la conversation.
+Après chaque modification, remplacez le fichier sur GitHub : le site se met à jour en 1 à 2 minutes.
